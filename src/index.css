@@ -20,6 +20,7 @@ table {
 
 th {
   border-bottom: 1px solid #cdcdcd;
+  padding: 0 20px;
 }
 th:nth-child(odd) {
   border-right: 1px solid #cdcdcd;

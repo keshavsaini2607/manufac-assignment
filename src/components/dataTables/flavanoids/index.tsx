@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { WineClassInterface } from "../../../utils/types/wine-class.interface";
 import { calculateMedian, calculateMode } from "../../../utils/helpers/dataFilterMethods";
+import Table from "../../table";
+import { ClassWiseDataInterface } from "../../../utils/types/classwise-data.interface";
 
 type props = {
    groupedData: [WineClassInterface[]] | null;
 };
 
-interface ClassWiseDataInterface {
-   mean: number;
-   mode: number;
-   median: number;
-}
+
 
 const FlavanoidsDataTable: React.FC<props> = ({ groupedData }) => {
-   const [classWiseData, setClassWiseData] = useState<any>([]);
+   const [classWiseData, setClassWiseData] = useState<ClassWiseDataInterface[]>([]);
 
    useEffect(() => {
       if (groupedData && Object.keys(groupedData).length > 0) {
@@ -47,36 +45,11 @@ const FlavanoidsDataTable: React.FC<props> = ({ groupedData }) => {
 
    
 
-   function TableRow({ title, dataKey }: any) {
-      return (
-         <tr>
-            <td>{title}</td>
-            {classWiseData.map((data: any, index: number) => (
-               <td key={index}>{data[dataKey]}</td>
-            ))}
-         </tr>
-      );
-   }
-
    return (
       <div>
          <h1 className="tabular_heading">Flavanoids Data Table</h1>
          <div>
-            <table>
-               <thead>
-                  <tr>
-                     <th>Measure</th>
-                     {classWiseData.map((data: any, index: any) => (
-                        <th key={index}>{`Class ${index + 1}`}</th>
-                     ))}
-                  </tr>
-               </thead>
-               <tbody>
-                  <TableRow title="Flavanoids Mean" dataKey="mean" />
-                  <TableRow title="Flavanoids Mode" dataKey="mode" />
-                  <TableRow title="Flavanoids Median" dataKey="median" />
-               </tbody>
-            </table>
+            <Table data={classWiseData} heading="Flavanoids" />
          </div>
       </div>
    );

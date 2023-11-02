@@ -4,13 +4,15 @@ import {
    calculateMedian,
    calculateMode,
 } from "../../../utils/helpers/dataFilterMethods";
+import Table from "../../table";
+import { ClassWiseDataInterface } from "../../../utils/types/classwise-data.interface";
 
 type props = {
    groupedData: [WineClassInterface[]] | null;
 };
 
 const GammaDataTable: React.FC<props> = ({ groupedData }) => {
-   const [classGammaData, setClassGammaData] = React.useState<any>([]);
+   const [classGammaData, setClassGammaData] = React.useState<ClassWiseDataInterface[]>([]);
 
    useEffect(() => {
       if (groupedData && Object.keys(groupedData).length > 0) {
@@ -43,37 +45,11 @@ const GammaDataTable: React.FC<props> = ({ groupedData }) => {
       }
    }, [groupedData]);
 
-
-   function TableRow({ title, dataKey }: any) {
-      return (
-         <tr>
-            <td>{title}</td>
-            {classGammaData.map((data: any, index: number) => (
-               <td key={index}>{data[dataKey]}</td>
-            ))}
-         </tr>
-      );
-   }
-
    return (
       <div>
          <h1 className="tabular_heading">Gamma Data Table</h1>
          <div>
-            <table>
-               <thead>
-                  <tr>
-                     <th>Measure</th>
-                     {classGammaData.map((data: any, index: any) => (
-                        <th key={index}>{`Class ${index + 1}`}</th>
-                     ))}
-                  </tr>
-               </thead>
-               <tbody>
-                  <TableRow title="Gamma Mean" dataKey="mean" />
-                  <TableRow title="Gamma Mode" dataKey="mode" />
-                  <TableRow title="Gamma Median" dataKey="median" />
-               </tbody>
-            </table>
+            <Table data={classGammaData} heading="Gamma" />
          </div>
       </div>
    );
