@@ -1,10 +1,7 @@
 
 # Manufac Assignment -Keshav Saini
 
-# To run the project
--- Clone the project locally 
--- run # yarn install
--- yarn start
+
 
 
 # Flavanoids
@@ -13,3 +10,33 @@
 
 # Gamma
 ![App Screenshot](https://drive.google.com/file/d/1nWaIFOYebeDY0psXo_WNcBD8oyHX4Amh/view?usp=sharing)
+
+# To Run the project locally
+ 
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/keshavsaini2607/manufac-assignment.git
+```
+
+Go to the project directory
+
+```bash
+  cd manufac-assignment
+```
+
+Install dependencies
+
+```bash
+  yarn install
+```
+
+Start the server
+
+```bash
+  yarn start
+```
+
