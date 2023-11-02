@@ -11,6 +11,7 @@ body {
 .tabular_heading {
   font-size: 18px;
   color: rgb(49, 49, 49);
+  margin-bottom: 1em;
 }
 
 table {
@@ -31,4 +32,11 @@ th:nth-child(2) {
 td {
   border: 1px solid #cdcdcd;
   padding: 3px;
+}
+
+.seperator {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid #cdcdcd;
+
 }

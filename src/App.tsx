@@ -25,6 +25,7 @@ function App() {
    return (
       <div className="App">
          <FlavanoidsDataTable groupedData={groupedData} />
+         <div className="seperator" />
          <GammaDataTable groupedData={groupedData} />
       </div>
    );
