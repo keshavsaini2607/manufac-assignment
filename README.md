@@ -1,7 +1,10 @@
 
 # Manufac Assignment -Keshav Saini
 
-
+# To run the project
+-- Clone the project locally 
+-- run # yarn install
+-- yarn start
 
 
 # Flavanoids
