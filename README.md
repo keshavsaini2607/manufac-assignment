@@ -5,11 +5,11 @@
 
 
 # Flavanoids
-![App Screenshot](https://imgur.com/GMnnNhH)
+![App Screenshot](https://i.imgur.com/GMnnNhH.png)
 
 
 # Gamma
-![App Screenshot](https://imgur.com/GRdeX0E)
+![App Screenshot](https://i.imgur.com/GRdeX0E.png)
 
 # To Run the project locally
  
