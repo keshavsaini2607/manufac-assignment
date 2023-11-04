@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { WineClassInterface } from "../../../utils/types/wine-class.interface";
 import {
+   calculateMean,
    calculateMedian,
    calculateMode,
 } from "../../../utils/helpers/dataFilterMethods";
@@ -21,11 +22,9 @@ const GammaDataTable: React.FC<props> = ({ groupedData }) => {
             const gammaValues = data.map(
                (item: any) => (item.Ash * item.Hue) / item.Magnesium
             );
-            const mean =
-               gammaValues.reduce(
-                  (sum: number, value: number) => +sum + +value,
-                  0
-               ) / gammaValues.length;
+
+            console.log({gammaValues})
+            const mean = calculateMean(gammaValues)
 
             // Calculate mode
             const mode = calculateMode(gammaValues);

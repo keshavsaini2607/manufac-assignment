@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { WineClassInterface } from "../../../utils/types/wine-class.interface";
-import { calculateMedian, calculateMode } from "../../../utils/helpers/dataFilterMethods";
+import { calculateMean, calculateMedian, calculateMode } from "../../../utils/helpers/dataFilterMethods";
 import Table from "../../table";
 import { ClassWiseDataInterface } from "../../../utils/types/classwise-data.interface";
 
@@ -12,18 +12,18 @@ type props = {
 
 const FlavanoidsDataTable: React.FC<props> = ({ groupedData }) => {
    const [classWiseData, setClassWiseData] = useState<ClassWiseDataInterface[]>([]);
+   console.log(groupedData)
 
    useEffect(() => {
       if (groupedData && Object.keys(groupedData).length > 0) {
          Object.values(groupedData)?.forEach((classData, index) => {
             const alcoholClass = index + 1; // Class numbers start from 1
 
-            const flavanoidsValues = classData.map((item) => item.Flavanoids);
+            const flavanoidsValues = classData.map((item) => Number(item.Flavanoids));
+            console.log(flavanoidsValues)
 
             // Calculate mean
-            const mean =
-               flavanoidsValues.reduce((sum, value) => +sum + +value, 0) /
-               flavanoidsValues.length;
+            const mean = calculateMean(flavanoidsValues);
 
             // Calculate mode
             const mode = calculateMode(flavanoidsValues);
