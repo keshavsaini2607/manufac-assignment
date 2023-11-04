@@ -5,7 +5,7 @@
 
 
 # Flavanoids
-![App Screenshot](https://i.imgur.com/GMnnNhH.png)
+![App Screenshot](https://i.imgur.com/2yUBHqN.png)
 
 
 # Gamma
