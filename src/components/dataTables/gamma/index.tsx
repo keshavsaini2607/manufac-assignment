@@ -13,7 +13,9 @@ type props = {
 };
 
 const GammaDataTable: React.FC<props> = ({ groupedData }) => {
-   const [classGammaData, setClassGammaData] = React.useState<ClassWiseDataInterface[]>([]);
+   const [classGammaData, setClassGammaData] = React.useState<
+      ClassWiseDataInterface[]
+   >([]);
 
    useEffect(() => {
       if (groupedData && Object.keys(groupedData).length > 0) {
@@ -23,8 +25,8 @@ const GammaDataTable: React.FC<props> = ({ groupedData }) => {
                (item: any) => (item.Ash * item.Hue) / item.Magnesium
             );
 
-            console.log({gammaValues})
-            const mean = calculateMean(gammaValues)
+            console.log({ gammaValues });
+            const mean = calculateMean(gammaValues);
 
             // Calculate mode
             const mode = calculateMode(gammaValues);
